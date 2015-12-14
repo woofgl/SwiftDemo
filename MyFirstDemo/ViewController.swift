@@ -9,11 +9,6 @@
 import UIKit
 
 class ViewController: UIViewController {
-    @IBOutlet weak var label: UILabel!
-    @IBAction func button(sender: AnyObject) {
-        label.text = "My Frist Swift Demo !"
-        label.textColor = UIColor.redColor()
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +20,11 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    @IBAction func showMessage (sender: AnyObject){
+        let alertController = UIAlertController(title:"My First App", message: "Hello, World!", preferredStyle: UIAlertControllerStyle.Alert)
+        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
+        alertController.addAction(okAction)
+        self.presentViewController(alertController, animated: true, completion: nil)
+    }
 }
 
